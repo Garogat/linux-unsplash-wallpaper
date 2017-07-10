@@ -10,6 +10,9 @@ DESKTOP="XFCE"
 # Set screen size
 SIZE="1920x1080"
 
+# Set home directory so cronjob can run this script
+#HOME=""
+
 WORKDIR=$HOME'/.local/share/unsplashLinux/'
 RANT=$(date +%s)
 mkdir -p $WORKDIR
