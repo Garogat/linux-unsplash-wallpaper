@@ -36,9 +36,7 @@ if [ "$DESKTOP" == "GNOME" ]; then
         gsettings set org.gnome.desktop.background picture-uri 'file://'${WORKDIR}${RANT}'.jpg'
 elif [ "$DESKTOP" == "XFCE" ]; then
         # Cron support
-        pid=$(ps -C xfce4-session -o pid=)
-        # Hack to remove the leading space. Maybe not so nice, but it works.
-        pid=$(echo $pid)
+        pid=$(pgrep xfce4-session -u $(whoami))
         # Get the environment variable from /proc
         export $(grep -z DBUS_SESSION_BUS_ADDRESS /proc/$pid/environ)
 
